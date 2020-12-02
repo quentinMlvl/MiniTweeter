@@ -1,0 +1,255 @@
+body {
+    width :90%;
+    box-sizing : border-box ;
+    margin : 1% auto 1% auto;
+    padding : 0px;
+    min-width : 350px;
+    max-width : 600px;
+    font-family: sans-serif; 
+}
+
+.theme-backcolor1 {
+    background : #0099cc;
+}
+
+.theme-backcolor2 {
+    background : #dcf0f7;
+}
+
+header,section, footer, .addTweet{
+    box-sizing : border-box ;
+    width : 100%;
+    padding : 0;
+    margin : 0;
+    text-align : center;
+    margin-bottom : .5rem;
+}
+
+header, footer, .addTweet{
+    border-radius: 1rem;
+    line-height : 3rem;
+}
+
+header {
+    font-size : 2rem;
+    line-height : 3rem;
+    min-height : 2.2rem;
+}
+
+section {
+    min-height : 400px;
+    padding: .5rem 0;
+    border-radius: .5rem .5rem 0 0;
+}
+
+footer { 
+    min-height : 2rem;
+    
+}
+
+h1 {
+    margin :0px;
+    padding-top: .5rem;
+    margin-bottom : .3rem;
+    font-size : 3rem;
+}
+
+article{
+    vertical-align : top;
+    box-sizing : border-box;
+    width : 100%;
+    margin : 0px;
+    padding : 1rem;
+    border-radius: .5rem .5rem 0 0 ;    
+}
+
+article h2 {
+    font-size : 1rem;
+    margin : 0px;
+    padding : 0px;
+    margin-bottom : 1rem;
+    text-align : center;
+}
+
+article h3 {
+    font-size : 1rem;
+    font-weight : normal;
+    margin : 0px;
+    padding : 0px;
+    margin-bottom : 1rem;
+    text-align : center;
+}
+
+/* le menu de navigation */
+
+#nav-menu {
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+    box-sizing : border-box;
+    border-radius: 0 0 .5rem .5rem;
+}
+
+#nav-menu ul {
+    margin: 0;
+    padding: .5rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#nav-menu ul a{
+    position: relative;
+}
+
+#nav-menu ul a img{
+    border-radius: 25%;
+    padding: 1rem;
+    max-width: 100%;
+    height: auto;
+    max-height: 2rem;
+}
+
+#nav-menu ul a:hover:after,
+#nav-menu ul a:focus:after
+{
+    content: attr(aria-label);
+    position: absolute;
+    bottom: -1em;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    white-space: nowrap;
+    padding: 0 .25rem;
+    line-height: 1.1rem;
+    background: #fff;
+    color: #000;
+    border: 1px solid grey;
+    border-radius: 4px;
+    font-size: .8rem;
+}
+
+#nav-menu ul a img:hover,
+#nav-menu ul a img:focus{
+    background-color: #0391c0;
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+/* le contenu des tweet  */
+
+
+.tweet {
+    text-align: left;
+    box-sizing : border-box;
+    width : 70%;
+    min-width : 300px;
+    margin: 1em auto;
+    font-size : 0.8rem;
+    padding : .5rem;
+    border-radius: .3rem;
+    background : #ffffff;
+}
+
+.tweet-footer {
+    display: flex;
+    justify-content: space-between;
+    box-sizing : border-box;
+    margin: 0;
+    margin-top: .5rem;
+}
+
+.tweet a {
+    align-self: center;
+    text-decoration : none;
+    color : inherit;
+}
+
+.tweet-footer{
+    border-top: 1px solid #000;    
+}
+
+
+.follower{
+    margin: .5rem auto;
+}
+
+.follower a{
+    text-decoration: none;
+    color: black;
+}
+
+.follower a:hover,
+.follower a:focus,
+.tweet a:hover,
+.tweet a:focus{
+    text-decoration: underline;
+}
+
+/* forms */
+
+
+.forms {
+    box-sizing : border-box;
+    width : 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding : .5rem;
+    margin: 0 auto 0 auto;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.form-item input {
+    width: 20rem;
+}
+
+.forms-text, .forms label {
+    resize: none;
+    color: #000;
+    border-radius: .3rem;
+    border: 0;
+    width : 100%;
+    margin-bottom: .3rem;
+}
+
+.forms input[type="submit"]{
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 1rem;    
+}
+
+.forms input[type="submit"]:hover,
+.forms input[type="submit"]:focus{
+    -webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.75);
+}
+
+/* poster un tweet */
+#tweet-form textarea{
+    width: 25rem;
+    height: 8rem;
+    margin-bottom: 1.5rem;
+}
+
+.addTweet a{
+    color: #dcf0f7;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.addTweet a:hover{
+    text-decoration: underline;
+}
+   
+
+
+
