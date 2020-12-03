@@ -398,7 +398,8 @@ class TweeterView extends \mf\view\AbstractView {
                 break;
         }
 
-        return(<<<EOT
+
+        $return = <<<EOT
 <header class="theme-backcolor1">
     ${header}
 </header>
@@ -411,10 +412,8 @@ class TweeterView extends \mf\view\AbstractView {
 <footer class="theme-backcolor1">
     ${footer}
 </footer>
-
-EOT);
-
-        
+EOT;
+    return($return);
     }
   
 };
