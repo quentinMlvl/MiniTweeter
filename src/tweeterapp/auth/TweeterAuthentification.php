@@ -97,4 +97,28 @@ class TweeterAuthentification extends Authentification {
 
     }
 
+    /* La méthode repeatUser
+     *  
+     * permet de vérifier que l'utilisateur répête son mot de passe
+     * dans le formulaire d'inscription
+     *
+     * @param : $password : le mot de passe tapé sur le formulaire   
+     * @param : $repeat_password : le mot de passe répété
+     *
+     * Algorithme :
+     * 
+     *  - Test si les 2 mots de passe passés en paramètre sont identiques
+     *  - Sinon 
+     *      - soulever une exception 
+     * 
+     */
+    public function repeatPassword($password, $repeat_password){
+        if ($password === $repeat_password) {
+            return true;
+        }else{
+            throw new AuthentificationException("Mot de passe différent, Veuillez répéter votre mot de passe");
+            return false;
+        }
+    }
+
 }

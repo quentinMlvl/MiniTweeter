@@ -12,5 +12,4 @@ class Tweet extends \Illuminate\Database\Eloquent\Model {
        {
               return $this->belongsTo('\tweeterapp\model\User', 'author');
        }
-
 }

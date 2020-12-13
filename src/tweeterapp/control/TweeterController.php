@@ -217,17 +217,28 @@ class TweeterController extends \mf\control\AbstractController {
     public function viewFollowTweet(){
         $auth = new TweeterAuthentification();
 
-        $reqUser = User::select()->where('username', '=', $auth->user_login);
+        
+        $user = User::where('username', '=', $auth->user_login)->first();
 
-        $reqFollowers = Follow::select()->where('followee', '=', $reqUser->first()->id)->get();
+        $reqFollowees = $user->followTweets()->get();
 
-        $reqFollowTweet = Tweet::select('*');
 
-        foreach ($reqFollowers as $follow) {
-            $reqFollowTweet->where(['author' => $follow->follower]);
+        $followeesTweets = [];
+
+        foreach ($reqFollowees as $followee) {
+            
+            foreach ($followee->tweets as $tweet) {
+                array_push($followeesTweets,$tweet);
+            }
+
         }
 
-        $vue = new TweeterView($reqFollowTweet->get());
+        /* Tri des tweets par date de creation décroissante */
+        usort($followeesTweets, function($object1, $object2){
+            return $object1->created_at < $object2->created_at;
+        });
+        
+        $vue = new TweeterView($followeesTweets);
 
         $vue->render('affiche_followerTweet');
 

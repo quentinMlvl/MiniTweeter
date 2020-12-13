@@ -44,7 +44,7 @@ class TweeterView extends \mf\view\AbstractView {
 
         if ((new TweeterAuthentification)->logged_in) {
             $link2 = '<a aria-label="Page Personnelle" href="'.  $router->urlFor('page_personnelle') .'"><img src="'.$app_root.'/html/img/pagePerso.png"></a>';
-            $link3 = '<a aria-label="Vos Followers" href="'.  $router->urlFor('affiche_followers') .'"><img src="'.$app_root.'/html/img/followees.png"></a>';
+            $link3 = '<a aria-label="Vos Followees" href="'.  $router->urlFor('affiche_followers') .'"><img src="'.$app_root.'/html/img/followees.png"></a>';
             $link4 = '<a aria-label="Tweets de vos followees" href="'.  $router->urlFor('affiche_followTweet') .'"><img src="'.$app_root.'/html/img/follow.png"></a>';
             $link5 = '<a aria-label="Déconnexion" href="'.  $router->urlFor('logout') .'"><img src="'.$app_root.'/html/img/logout.png"></a>';
         }else {
@@ -255,7 +255,12 @@ class TweeterView extends \mf\view\AbstractView {
 
         $chaine = "<h2>Vos follows</h2>";
 
-        $chaine .= $this->renderHome();
+        if(count($this->data) > 0){
+            $chaine .= $this->renderHome();
+        }else {
+            $chaine .= '<p>Vous ne suivez personne pour le moment.</p>';
+        }
+        
 
         return($chaine);
     }
