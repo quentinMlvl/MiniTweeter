@@ -1,6 +1,7 @@
 # MiniTweeter
 
 Identifiants et mots de passe pour test des comptes :
+
 username = qmalavielle
 
 mdp = toto
